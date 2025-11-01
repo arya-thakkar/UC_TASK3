@@ -20,6 +20,7 @@ const Stories = () => {
 
   return (
     <>
+    <div className="main-layout">
     <p className="story">Stories</p>
     <div className="stories-container">
       {stories.map((story, index) => (
@@ -32,6 +33,7 @@ const Stories = () => {
           <span className="story-username">{story.login.username}</span>
         </div>
       ))}
+    </div>
     </div>
     </>
   );

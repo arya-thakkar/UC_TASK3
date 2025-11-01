@@ -2,13 +2,18 @@ body {
   background: #121212;
   color: #eee;
   font-family: "Segoe UI", Roboto, sans-serif;
-  overflow-y: auto;
-  margin-top: 130px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.story{
+  margin-top: -13px;
 }
 
 .feed-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 20px;
   width: 100%;
   padding: 0 20px; 
@@ -33,6 +38,7 @@ body {
   align-items: center;
   gap: 0.8rem;
   padding: 1rem;
+  min-width: 0; 
 }
 
 .avatar {
@@ -47,6 +53,11 @@ body {
   font-weight: 600;
   font-size: 1rem;
   color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1; 
+  min-width: 0;
 }
 
 .post-image {
@@ -124,6 +135,7 @@ body {
     grid-template-columns: 1fr;
     gap: 10px;
     padding: 80px 10px 10px;
+    margin-top: -90px;
   }
 
   .post-image {

@@ -1,0 +1,155 @@
+.explore-container {
+  color: white;
+  min-height: 100vh;
+  padding: 20px;
+  margin-top: -50px;
+}
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+
+.explore-card {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.explore-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.explore-card:hover img {
+  transform: scale(1.05);
+}
+
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  padding: 8px;
+  font-size: 14px;
+}
+
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 10px;
+}
+
+.modal-content {
+  background: #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow: hidden;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.modal-details {
+  padding: 15px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.modal-actions button {
+  background: none;
+  border: none;
+  color: #4a90e2;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.read-more {
+  display: block;
+  margin-top: 10px;
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+
+@media (max-width: 992px) {
+  .explore-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+  }
+
+  .explore-card img {
+    height: 250px;
+  }
+
+  .overlay {
+    font-size: 13px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .explore-container {
+    padding: 10px;
+  }
+
+  .explore-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .explore-card img {
+    height: 220px;
+  }
+
+  .overlay {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .modal-content {
+    max-width: 95%;
+    border-radius: 8px;
+  }
+
+  .modal-details {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+}

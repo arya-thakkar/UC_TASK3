@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import "/src/styles/task2.css";
 import img1 from "/src/assets/image2.png";
-function SignupForm() {
+import { useNavigate } from "react-router-dom";
+
+function SignupForm({ setIsAuthenticated }) {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showconditions, setShowconditions] = useState(false);
+  const navigate = useNavigate();
+const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   function tosignIn(e) {
     e.preventDefault();
@@ -17,8 +21,8 @@ function SignupForm() {
     if (!/^[A-Za-z0-9]{3,15}$/.test(username)) { alert("Username format is invalid"); return; }
 
     if (!email) { alert("Email is required"); return; }
-    if (email.length > 50) { alert("Email must be less than 20 characters"); return; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert("Email format is invalid"); return; }
+    if (email.length > 50) { alert("Email must be less than 50 characters"); return; }
+    if (regex.test(email)) { alert("Email format is invalid"); return; }
 
     if (!password) { alert("Password is required"); return; }
     if (password.length < 4) { alert("Password must be at least 4 characters"); return; }
@@ -30,7 +34,9 @@ function SignupForm() {
     if (!confirmPassword) { alert("Confirm Password is required"); return; }
     if (password !== confirmPassword) { alert("Passwords do not match"); return; }
 
-    alert("Sign In Successful");
+    alert("Sign Up Successful!");
+    setIsAuthenticated(true);
+    navigate("/home");
   }
 
   function displayconditions() {
@@ -61,14 +67,14 @@ function SignupForm() {
             id="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-          ></input>
+          />
           <input
             type="email"
             placeholder="Email"
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-          ></input>
+          />
           <input
             type="password"
             placeholder="Password"
@@ -77,7 +83,7 @@ function SignupForm() {
             onChange={(e) => setPassword(e.target.value)}
             onFocus={() => setShowconditions(true)}
             onBlur={() => setShowconditions(false)}
-          ></input>
+          />
           {showconditions && displayconditions()}
           <input
             type="password"
@@ -85,16 +91,20 @@ function SignupForm() {
             id="confirm-password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-          ></input>
+          />
           <button type="submit" id="signInbtn">
             Sign Up
           </button>
         </div>
-      <div className="login-section">
-        <p>Already have an account? <a href="#" className="login-link">Log in</a></p>
-      </div>
+        <div className="login-section">
+          <p>
+            Already have an account?{" "}
+            <a href="/login" className="login-link">
+              Log in
+            </a>
+          </p>
+        </div>
       </form>
-
     </div>
   );
 }

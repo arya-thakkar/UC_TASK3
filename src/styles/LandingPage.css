@@ -1,0 +1,101 @@
+.landing-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #fff;
+  text-align: center;
+  font-family: "Pacifico", cursive;  margin: 0; 
+  padding: 0 20px;
+  background:#212121;
+  margin-left: 300px;
+  margin-top: -50px;
+  gap:150px;
+
+
+.image{
+    margin-left: -600px;
+    width:600px;
+}
+
+.landing-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.landing-subtitle {
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-bottom: 40px;
+}
+
+.landing-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.landing-btn {
+  background: linear-gradient(135deg, #0095f6, #0078d7);
+  color: #fff;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-align: center;
+  width:150px;
+  height: 60px;
+}
+
+.landing-btn:hover {
+  background: linear-gradient(135deg, #00aaff, #0088e8);
+  box-shadow: 0 6px 14px rgba(0, 149, 246, 0.5);
+  transform: translateY(-2px);
+}
+
+
+@media (max-width: 768px) {
+  .landing-title {
+    font-size: 2.5rem;
+  }
+  .landing-subtitle {
+    font-size: 1rem;
+  }
+  .landing-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .landing-btn {
+    width: 80%;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-title {
+    font-size: 2rem;
+    margin-right: 270px;
+  }
+  .landing-subtitle {
+    font-size: 0.95rem;
+        margin-right: 265px;
+
+  }
+  .landing-btn {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+        margin-right: 450px;
+
+  }
+  .image{
+    display: none;
+  }
+}
+}

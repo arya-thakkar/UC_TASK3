@@ -13,8 +13,10 @@
 }
 
 .user-cards-grid-wrapper {
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   width: 100%;
+  -webkit-overflow-scrolling: touch; 
 }
 
 .user-cards-grid-wrapper::-webkit-scrollbar {
@@ -24,17 +26,15 @@
 .user-cards-grid {
   display: flex;
   gap: 1rem;
-  animation: scroll 20s linear infinite;
+  transition: transform 0.3s ease-in-out;
+  padding-bottom: 1rem;
+  overflow-x: auto;
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+.user-cards-grid:hover {
+  transform: scale(1.02);
 }
+
 
 .user-card {
   flex: 0 0 auto;
@@ -93,9 +93,14 @@
   background: #3690d9;
 }
 
-@media (max-width: 480px) {
+
+@media (max-width: 768px) {
+  .user-cards-grid-wrapper {
+    overflow-x: auto;
+  }
+
   .user-card {
-    width: 140px;
+    width: 150px;
     padding: 0.8rem;
   }
 
@@ -115,30 +120,5 @@
   .follow-btn {
     width: 60px;
     padding: 0.3rem 0.6rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .user-card {
-    width: 160px;
-    padding: 0.9rem;
-  }
-
-  .user-img {
-    width: 70px;
-    height: 70px;
-  }
-
-  .user-name {
-    font-size: 1.05rem;
-  }
-
-  .user-username {
-    font-size: 0.85rem;
-  }
-
-  .follow-btn {
-    width: 65px;
-    padding: 0.35rem 0.8rem;
   }
 }

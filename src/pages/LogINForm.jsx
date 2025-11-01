@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import "/src/styles/task.css";
 import img from "/src/assets/image.png";
+import { useNavigate } from "react-router-dom";
 
-function LogInForm() {
+function LogInForm({ setIsAuthenticated }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   function changeEmail(e) {
     setEmail(e.target.value);
@@ -67,7 +69,9 @@ function LogInForm() {
 
     if (!emailError || !passwordError) return;
 
-    alert("Form submitted successfully!");
+    alert("Login Successful!");
+    setIsAuthenticated(true);
+    navigate("/home");
   }
 
   return (
@@ -79,11 +83,11 @@ function LogInForm() {
         <div className="form-struct">
           <input
             type="email"
-            placeholder="Phone number, username, or email"
+            placeholder="Username, or email"
             value={email}
             onChange={changeEmail}
             id="inEmail"
-          ></input>
+          />
           {email.length > 50 && <p>Email should be less than 50 characters</p>}
           <input
             type="password"
@@ -91,14 +95,14 @@ function LogInForm() {
             value={password}
             onChange={changePassword}
             id="inPassword"
-          ></input>
+          />
           <button type="submit" id="logInbtn">
             Log In
           </button>
           <div className="divider">
             <span>OR</span>
           </div>
-          <a href="https://www.google.com/?zx=1758723440207&no_sw_cr=1" id="extra">
+          <a href="https://www.google.com" id="extra">
             Log in with Google
           </a>
           <a href="#" id="forgotpass">
@@ -106,7 +110,12 @@ function LogInForm() {
           </a>
         </div>
         <div className="signup-section">
-          <p>Don't have an account? <a href="#" className="signup-link">Sign up</a></p>
+          <p>
+            Don't have an account?{" "}
+            <a href="/signup" className="signup-link">
+              Sign up
+            </a>
+          </p>
         </div>
       </form>
     </div>

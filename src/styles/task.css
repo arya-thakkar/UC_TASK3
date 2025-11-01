@@ -5,6 +5,8 @@ body {
   overflow: hidden;
   margin: 0;
   padding: 0;
+  background: #212121;
+
 }
 
 .login-container {
@@ -100,7 +102,7 @@ button:active {
   align-items: center;
   width: 268px;
   margin: 16px 0;
-  color: #8e8e8e;
+  color: #fff;
   font-size: 13px;
   font-weight: 600;
 }
@@ -126,7 +128,7 @@ button:active {
 .signup-section p {
   margin: 0;
   font-size: 14px;
-  color: #262626;
+  color: #fff;
 }
 
 .signup-link {

@@ -7,7 +7,7 @@ const PostFeed = () => {
     useEffect(() => {
         async function fetchPosts() {
             try {
-                const userRes = await fetch("https://randomuser.me/api/?results=50");
+                const userRes = await fetch("https://randomuser.me/api/?results=500");
                 const userData = await userRes.json();
 
                 const mockPosts = userData.results.map((user, index) => ({
@@ -36,7 +36,6 @@ const PostFeed = () => {
 
     return (
         <>
-        <Header />
         <div className="post-feed">
             {posts.map((post) => (
                 <div className="post-card" key={post.id}>

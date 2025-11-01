@@ -1,0 +1,63 @@
+.main-content {
+  margin-left: 280px;
+  width: calc(100% - 280px);
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* 📱 Mobile screens (phones) */
+@media (max-width: 480px) {
+  .main-content {
+    margin-left: 0;            /* remove left margin so content fills screen */
+    width: 100%;               /* full width */
+    padding: 15px;             /* smaller padding */
+    margin-bottom: 70px;       /* space for mobile bottom nav if you add one */
+  }
+}
+
+/* 💻 Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  .main-content {
+    margin-left: 0;            /* or 180px if sidebar collapses */
+    width: 100%;
+    padding: 18px;
+  }
+}
+
+/* 🧮 Small laptops */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main-content {
+    margin-left: 220px;
+    width: calc(100% - 220px);
+    padding: 20px;
+  }
+}
+
+/* 💻 Standard laptops */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .main-content {
+    margin-left: 280px;
+    width: calc(100% - 280px);
+    padding: 20px;
+  }
+}
+
+/* 🖥️ Large screens/desktops */
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .main-content {
+    margin-left: 320px;
+    width: calc(100% - 320px);
+    padding: 25px;
+  }
+}
+
+/* 🧱 Extra large screens / 4K */
+@media (min-width: 1921px) {
+  .main-content {
+    margin-left: 380px;
+    width: calc(100% - 380px);
+    padding: 30px;
+  }
+}

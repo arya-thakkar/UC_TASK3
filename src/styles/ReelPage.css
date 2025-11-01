@@ -1,0 +1,149 @@
+.reels-page {
+  padding: 20px;
+  color: white;
+  min-height: 100vh;
+}
+
+.reels-title {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+
+}
+
+.reels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.reel-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.reel-card:hover {
+  transform: translateY(-3px);
+}
+
+.reel-thumb {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.reel-card:hover .reel-thumb {
+  transform: scale(1.05);
+}
+
+.reel-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.reel-modal-content {
+  position: relative;
+  background: #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-width: 420px;
+  width: 90%;
+}
+
+.reel-video {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #333;
+}
+
+.reel-details {
+  padding: 15px;
+}
+
+.reel-details h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.reel-actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 8px;
+}
+
+.like-btn,
+.share-btn {
+  background: none;
+  border: none;
+  color: #4a90e2;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.like-btn:hover,
+.share-btn:hover {
+  color: #76baff;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .reels-page {
+    margin-left: 0;
+    padding: 10px;
+  }
+  .reels-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .reel-thumb {
+    height: 220px;
+  }
+  .reel-modal-content {
+    width: 95%;
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .reels-grid {
+    grid-template-columns: 1fr;
+  }
+  .reel-thumb {
+    height: 160px;
+  }
+  .reels-title {
+    font-size: 22px;
+  }
+  .reel-actions button {
+    font-size: 14px;
+  }
+  .reel-details h3 {
+    font-size: 16px;
+  }
+}
