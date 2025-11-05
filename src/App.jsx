@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import HomePage from "./pages/HomePage";
 import Profile from "./pages/ProfilePage";
 import PostFeed from "./pages/PostPage";
-import LogInForm from "./pages/LogInForm";
+import LogInForm from "./pages/LogINForm";
 import SignupForm from "./pages/SignInForm";
 import Explore from "./pages/ExplorePage";
 import ReelsPage from "./pages/ReelPage";
