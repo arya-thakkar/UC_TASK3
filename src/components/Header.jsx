@@ -3,10 +3,17 @@ import './../styles/Header.css';
 import { FaHome, FaUser, FaPlusSquare } from 'react-icons/fa';
 import { FiCompass } from 'react-icons/fi';
 import { FaVideo } from 'react-icons/fa';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const headerRef = useRef(null);
+
+  const handleLogout = () => {
+    document.cookie = 'token=; path=/; max-age=0';
+    localStorage.removeItem('user');
+    localStorage.removeItem('realUserProfile');
+    window.location.href = '/login';
+  };
 
   return (
     <header className="header" ref={headerRef}>
@@ -42,6 +49,26 @@ const Header = () => {
               <FaVideo className="nav-icon" />
               <span className="signup">Reels</span>
             </Link>
+          </li>
+          <li className="header-nav-item">
+            <button
+              onClick={handleLogout}
+              style={{
+                background: 'none',
+                border: 'none',
+                color: 'inherit',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                fontSize: 'inherit',
+                fontFamily: 'inherit',
+                padding: '0'
+              }}
+            >
+              <span role="img" aria-label="logout">➡️</span>
+              <span>Logout</span>
+            </button>
           </li>
         </ul>
       </nav>

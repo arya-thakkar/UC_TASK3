@@ -3,13 +3,14 @@ import Header from "./components/Header";
 import HomePage from "./pages/HomePage";
 import Profile from "./pages/ProfilePage";
 import PostFeed from "./pages/PostPage";
-import LogInForm from "./pages/LogInForm";
+import LogInForm from "./pages/LogINForm";
 import SignupForm from "./pages/SignInForm";
 import Explore from "./pages/ExplorePage";
 import ReelsPage from "./pages/ReelPage";
 import LandingPage from "./pages/LandingPage";
 import { useState } from "react";
 import "./styles/App.css";
+import ProtectedRoute from "./components/ProtectedRoutes";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -22,7 +23,7 @@ function App() {
 
         <div className="main-content">
           <Routes>
-   
+
             <Route path="/" element={<LandingPage />} />
             <Route
               path="/login"
@@ -32,15 +33,33 @@ function App() {
               path="/signup"
               element={<SignupForm setIsAuthenticated={setIsAuthenticated} />}
             />
-
-      
             {isAuthenticated ? (
               <>
-                <Route path="/home" element={<HomePage />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/post" element={<PostFeed />} />
-                <Route path="/explore" element={<Explore />} />
-                <Route path="/reel" element={<ReelsPage />} />
+                <Route path="/home" element={
+                  <ProtectedRoute>
+                    <HomePage />
+                  </ProtectedRoute>
+                } />
+                <Route path="/profile" element={
+                  <ProtectedRoute>
+                    <Profile />
+                  </ProtectedRoute>
+                } />
+                <Route path="/post" element={
+                  <ProtectedRoute>
+                    <PostFeed />
+                  </ProtectedRoute>
+                } />
+                <Route path="/explore" element={
+                  <ProtectedRoute>
+                    <Explore />
+                  </ProtectedRoute>
+                } />
+                <Route path="/reel" element={
+                  <ProtectedRoute>
+                    <ReelsPage />
+                  </ProtectedRoute>
+                } />
               </>
             ) : (
               <>
@@ -52,7 +71,7 @@ function App() {
               </>
             )}
 
-  
+
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
