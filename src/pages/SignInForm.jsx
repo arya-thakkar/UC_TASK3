@@ -177,19 +177,19 @@ function SignupForm({ setIsAuthenticated }) {
             rows="3"
             maxLength="200"
             required
-            style={{width:"350px",height:"60px",fontSize:"14px",padding:"8px"}}
+            style={{height:"60px",fontSize:"14px",padding:"8px"}}
           />
           <button type="submit" id="signInbtn" disabled={loading}>
             {loading ? "Registering..." : "Sign Up"}
           </button>
         </div>
         <div className="login-section">
-          <p>
-            Already have an account?{" "}
             <a href="/login" className="login-link">
+          <p style={{color:"#fff"}}>
+            Already have an account?{" "}
+          </p>
               Log in
             </a>
-          </p>
         </div>
       </form>
     </div>

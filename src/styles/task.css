@@ -202,4 +202,7 @@ button:active {
   .login-image {
     display: none;
   }
+  .signup-section{
+    margin-top: -40px;
+  }
 }

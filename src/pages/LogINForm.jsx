@@ -173,12 +173,12 @@ function LogInForm({ setIsAuthenticated }) {
           </div>
         </div>
         <div className="signup-section">
-          <p>
-            Don't have an account?{" "}
-            <a href="/signup" className="signup-link">
-              Sign up
-            </a>
-          </p>
+          <a href="/signup" className="signup-link">
+            <p style={{ color: "#fff" }}>
+              Don't have an account?{" "}
+            </p>
+            Sign up
+          </a>
         </div>
       </form>
     </div>
