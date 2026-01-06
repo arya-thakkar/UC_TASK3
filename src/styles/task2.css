@@ -150,17 +150,42 @@ button:active {
 
 @media screen and (max-width: 768px) {
   .signup-container {
-    gap: 40px;
-    padding: 0 20px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    margin-top: -80px;
+    overflow: hidden;
+  }
+
+  .sign-image {
+    display: none;
   }
 
   .form-struct,
   .login-section {
-    width: 300px;
+    width: 90%;
+    max-width: 350px;
+    padding: 30px 20px;
+    border: none;
+    background-color: transparent;
   }
 
-  input {
-    width: 280px;
+  input,
+  button,
+  .passwordConditions {
+    width: 90%;
+    max-width: 268px;
+    margin: 6px auto;
+    display: block;
+  }
+  #gender{
+    margin-left:167px;
+  }
+  
+  #bio{
+    width:180px;
   }
 }
 
@@ -204,7 +229,7 @@ button:active {
   #gender{
     margin-left:167px;
   }
-
+  
   #bio{
     width:180px;
   }
